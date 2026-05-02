@@ -10,43 +10,59 @@
     <h2>Aula 04</h2>
     <h3>Video 24</h3>
 
-    <button onclick="mostrarTabuada()">Criar tabuada</button>
-    <button onclick="limparTabuada()">Limpar tabuada</button>
+    <button onclick="somarNumero()">+</button>
+    <button onclick="subtrairNumero()">-</button>
+    <button onclick="dividirNumero()">/</button>
+    <button onclick="multiplicarNumero()">*</button>
 
-    <div id="output">Teste</div>
+    <button onclick="limparTela()">Limpar Tela</button>
+
+    <div id="output">Calculadora</div>
 
     <script>
 
-        function mostrarTabuada(){
-            var n = prompt("Digite um número")
-            n = parseInt(n)
-
-            limparTabuada()
-
-            var i = 1
-
-            /* Com método for
-            for(i = 0; i <= 1000; i++){
-                mensagem += n +' x '+ i +' = '+ (n*i) +'<br>'
-                i++
-            }
-            output.innerHTML = mensagem
-            */
-           // com método While
-           while(i <= 1000){
-                mensagem += n +'x'+ i + '=' +(n*i) + '<br>'
-                i++
-           }
-           output.innerHTML = mensagem
-        }
-
-        function limparTabuada(){
-            mensagem = ''
-            output.innerHTML = mensagem
-        }
+        var n1 = prompt("Digite um número")
+        n1 = parseFloat(n1)
         
-        var output = document.querySelector("#output")
-        var mensagem =""
+        escreve()
+
+        function escreve(){
+            var output = document.querySelector("#output")
+            output.innerHTML = n1
+        }
+
+        function somarNumero(){ // Soma os números
+            var n = prompt("Digite um número")
+            n = parseFloat(n)
+            n1 = n1 + n
+            escreve()
+        }
+
+       function subtrairNumero(){ // Subtrai os números
+            var n = prompt("Digite outro número")
+            n = parseFloat(n)
+            n1 = n1 - n
+            escreve()
+        }
+
+        function dividirNumero(){ // Divide os números
+            var n = prompt("Digite outro número")
+            n = parseFloat(n)
+            n1 = n1 / n
+            escreve()
+        }
+
+        function multiplicarNumero(){ // multiplica os números
+            var n = prompt("Digite outro número")
+            n = parseFloat(n)
+            n1 = n1 * n
+            escreve()
+        }
+
+        function limparTela(){
+            escreve = ''
+            output.innerHTML = escreve
+        }
 
     </script>
 </body>
