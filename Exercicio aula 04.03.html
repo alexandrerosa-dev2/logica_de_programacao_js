@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <h2>Aula 04</h2>
+    <h3>Video 24</h3>
+
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+
+    <button onclick="limparTela()">Limpar Tela</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        var n1 = prompt("Digite um número")
+        n1 = parseFloat(n1)
+        
+        escreve(n1)
+
+        function iniciarCalculo(simbolo){
+            var n1 = parseFloat(document.querySelector('#output').textContent)
+
+            var n2 = prompt('Digite outro número')
+            n2 = parseFloat(n2)
+
+            var msg = calcular(simbolo, n1, n2)
+
+            escreve(msg);
+        }
+
+        function escreve(mensagem){
+            var output = document.querySelector("#output")
+            output.innerHTML = mensagem
+        }
+
+        function calcular(simbolo, n1, n2){
+
+            if(isNaN (n1) && isNaN(n2)){
+                alert("Chama passando números")
+            }
+            
+            var numeroCalculado = null
+
+            switch(simbolo){
+                case'+':
+                numeroCalculado = n1 + n2
+                break
+
+                case'-':
+                numeroCalculado = n1 - n2
+                break
+
+                case '/':
+                numeroCalculado = n1 / n2
+                break
+
+                case '*':
+                numeroCalculado = n1 * n2
+            }
+
+            return numeroCalculado
+        }
+
+        function limparTela(){
+            escreve = ''
+            output.innerHTML = escreve
+        }
+
+    </script>
+</body>
+</body>
+</html>
+</html>
