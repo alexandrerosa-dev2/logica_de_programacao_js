@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <h2>Aula 04</h2>
+    <h3>Video 24</h3>
+
+    <button onclick="mostrarTabuada()">Criar tabuada</button>
+    <button onclick="limparTabuada()">Limpar tabuada</button>
+
+    <div id="output">Teste</div>
+
+    <script>
+
+        function mostrarTabuada(){
+            var n = prompt("Digite um número")
+            n = parseInt(n)
+
+            limparTabuada()
+
+            var i = 1
+
+            /* Com método for
+            for(i = 0; i <= 1000; i++){
+                mensagem += n +' x '+ i +' = '+ (n*i) +'<br>'
+                i++
+            }
+            output.innerHTML = mensagem
+            */
+           // com método While
+           while(i <= 1000){
+                mensagem += n +'x'+ i + '=' +(n*i) + '<br>'
+                i++
+           }
+           output.innerHTML = mensagem
+        }
+
+        function limparTabuada(){
+            mensagem = ''
+            output.innerHTML = mensagem
+        }
+        
+        var output = document.querySelector("#output")
+        var mensagem =""
+
+    </script>
+</body>
+</body>
+</html>
+</html>

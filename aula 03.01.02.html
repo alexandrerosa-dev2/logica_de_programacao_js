@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <h2>Aula 03.01</h2>
+    <h3>Vídeo 18 e 19</h3>
+
+    <script>
+       var numero = parseInt(prompt("Digite um número para a tabuada"))
+
+       for(var i = 1; i <= 1000; i++){
+        document.write(numero + " * " + i + " = " + (numero * i) + " <br>")
+        if(i % 10 === 0 && i > 0){
+            document.write("<hr>")
+            i++
+        }
+       }
+       document.write("Fim da tabuada!")
+
+    </script>
+</body>
+</body>
+</html>
