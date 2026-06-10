@@ -10,45 +10,60 @@
     <h2>Aula 04</h2>
     <h3>Video 24</h3>
 
-    <button onclick="calcular('+')">+</button>
-    <button onclick="calcular('-')">-</button>
-    <button onclick="calcular('/')">/</button>
-    <button onclick="calcular('*')">*</button>
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+    <button onclick="iniciarCalculo('*')">*</button>
 
     <button onclick="limparTela()">Limpar Tela</button>
 
-    <div id="output">Calculadora</div>
+    <div id="output"></div>
 
     <script>
 
         var n1 = prompt("Digite um número")
         n1 = parseFloat(n1)
         
-        escreve()
+        escreve(n1)
 
-        function escreve(){
-            var output = document.querySelector("#output")
-            output.innerHTML = n1
+        function iniciarCalculo(simbolo){
+            var n1 = parseFloat(document.querySelector('#output').textContent)
+
+            var n2 = prompt('Digite outro número')
+            n2 = parseFloat(n2)
+
+            var msg = calcular(simbolo, n1, n2)
+
+            escreve(msg);
         }
 
-        function calcular(simbolo){
-            var n = prompt("Digite outro número")
-            n = parseFloat(n)
+        function escreve(mensagem){
+            var output = document.querySelector("#output")
+            output.innerHTML = mensagem
+        }
+
+        function calcular(simbolo, n1, n2){
             
+            var numeroCalculado = null
+
             switch(simbolo){
-                case'+': n1 += n
+                case'+':
+                numeroCalculado = n1 + n2
                 break
 
-                case'-': n1 -= n
+                case'-':
+                numeroCalculado = n1 - n2
                 break
 
-                case '/': n1 /= n
+                case '/':
+                numeroCalculado = n1 / n2
                 break
 
-                case '*': n1 *= n
+                case '*':
+                numeroCalculado = n1 * n2
             }
 
-            escreve()
+            return numeroCalculado
         }
 
         function limparTela(){
