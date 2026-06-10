@@ -11,14 +11,14 @@
     <h3>Vídeo 9</h3>
 
     <script>
-            var nJogardor1 = prompt("Digite um número")
-            nJogardor1 = parseInt(nJogardor1)
+            var nJogador1 = prompt("Digite um número")
+            nJogador1 = parseInt(nJogador1)
 
             var nJogador2 = prompt("Digite outro número")
             nJogador2 = parseInt(nJogador2)
 
             // Se os números escolhidos forem iguais.
-            if(nJogardor1 == nJogador2){
+            if(nJogador1 == nJogador2){
                 alert("Empate!")
             }else{
 
@@ -27,7 +27,7 @@
 
                 //Se o número sorteado for 0, quem escolheu o menor número vence.
                 if(nSort === 0){
-                    if(nJogardor1 < nJogador2){
+                    if(nJogador1 < nJogador2){
                         alert("Jogador 1 venceu!")
                     }else{
                     alert("Jogador 2 venceu!")
@@ -35,7 +35,7 @@
                     
                 //Se o número sorteado for mair que 0, quem escolheu o maior número vence.
                 }else{
-                    if(nJogardor1 > nJogador2){
+                    if(nJogador1 > nJogador2){
                     alert("Jogador 1 venceu!")
                     }else{
                         alert("Jogador 2 venceu!")
