@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Lógica de programação com Javascript</h1>
-    <h2>Aula 04</h2>
-    <h3>Video 24</h3>
+    <h2>Aula 05</h2>
+    <h3>Video 33</h3>
 
     <button onclick="iniciarCalculo('+')">+</button>
     <button onclick="iniciarCalculo('-')">-</button>
@@ -32,7 +32,12 @@
             var n2 = prompt('Digite outro número')
             n2 = parseFloat(n2)
 
-            var msg = calcular(simbolo, n1, n2)
+            
+            try{
+                var msg = calcular(simbolo, n1, n2)
+            }catch(e){
+                console.log(e)
+            }
 
             escreve(msg);
         }
@@ -43,7 +48,15 @@
         }
 
         function calcular(simbolo, n1, n2){
-           
+
+            if(simbolo !=='+' && simbolo !=='-'&& simbolo !=='-' && simbolo !=='*' && simbolo !=='/'){
+                throw new Error("Digite um símbolo válido")
+            }
+
+            if(isNaN (n1) || isNaN(n2)){
+                throw new Error("Chama passando números")
+            }
+            
             var numeroCalculado = null
 
             switch(simbolo){
