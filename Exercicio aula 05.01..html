@@ -10,61 +10,52 @@
     <h2>Aula 04</h2>
     <h3>Video 28</h3>
 
-    <button onclick="mostrarAreaAlert()">Mostrar área num alert</button>
-    <button onclick="mostrarAreaOutput()">Mostrar área num output</button>
+    <!-- BUTTONS-->
+    <button onclick="mostrarAreaAlert()">Mostrar Area Alert</button>
+    <button onclick="mostrarAreaOutput()">Mostrar area Output</button>
 
-    <div id="output"></div>
+    <div id="output">Output</div>
 
     <script>
 
+        //FUNÇÃO MOSTRAR AREA ALERT
         function mostrarAreaAlert(){
             var largura = prompt("Digite a largura")
-        largura = parseFloat(largura)
+            largura = parseFloat(largura)
 
-        var altura = prompt("Digite a altura")
-        altura = parseFloat(altura)
+            var altura = prompt("Digite a altura")
+            altura = parseFloat(altura)
 
-        try{
             var area = calcularArea(largura, altura)
-        }catch(e){
-            area = e;
+
+            alert("A área calculada é "+ area);
         }
 
-            
-            alert("A área total é: " + area)
-        }
-
+        //FUNÇÃO MOSTRAR AREA OUTPUT
         function mostrarAreaOutput(){
             var largura = prompt("Digite a largura")
-        largura = parseFloat(largura)
+            largura = parseFloat(largura)
 
-        var altura = prompt("Digite a altura")
-        altura = parseFloat(altura)
+            var altura = prompt("Digite a altura")
+            altura = parseFloat(altura)
 
-        try{
             var area = calcularArea(largura, altura)
-        }catch(e){
-            area = e;
-        }
-            
-            document.querySelector('#output').innerHTML = "A área total é: " + area
+
+            document.querySelector("#output").innerHTML = "A área calculada é " + area;
         }
         
+        mostrarAreaAlert();
+
+        //FUNÇÃO CALCULAR AREA
         function calcularArea(l, a){
             return l * a
         }
 
-        mostrarAreaAlert()
 
-        function calcularArea(l, a){
-            if(l === undefined || a === undefined){
-                throw new Error("calcularArea precisa receber dois números")
-            }
-            if(isNaN(l) || isNaN(a)){
-                throw new Error("Apenas números")
-            }
-            return l * a;            
-        }
+        
+
+        //
+        
 
     </script>
 </body>
