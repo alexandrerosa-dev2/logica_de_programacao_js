@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <h2>Aula 06.01</h2>
+    <h3>Video 37</h3> 
+
+    <div id="output"></div>
+</body>
+
+<script>
+
+    var produto1 = new Object()
+    produto1.nome = 'Caneta azul'
+    produto1.preco = 2.50
+    produto1.quantidade = 20
+
+    
+    var produto2 = new Object()
+    produto2.nome = 'Capa dura sem pauta'
+    produto2.preco = 19.99
+    produto2.quantidade = 10
+
+    var produto3 = new Object()
+    produto3.nome = 'produto3 Lobby'
+    produto3.preco = 78.90
+    produto3.quantidade = 30
+    
+
+    var msg = ''
+
+    msg += 'Nome: '+ produto1.nome + '<br>';
+    msg += 'Preço: '+ produto1.preco + '<br>';
+    msg += 'quantidade: '+ produto1.quantidade + '<br>';
+
+    document.querySelector('#output').innerHTML = msg;
+</script>
+</html>
+</html>
